@@ -1,23 +1,100 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Test_Task2_DownloadImage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8d-rH-clX">
+                                <rect key="frame" x="0.0" y="30" width="320" height="310"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dxr-cf-ZNK">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="310"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uPk-QZ-F59">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="310"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Dxr-cf-ZNK" secondAttribute="bottom" id="6Mb-GM-Yin"/>
+                                    <constraint firstAttribute="bottom" secondItem="uPk-QZ-F59" secondAttribute="bottom" id="Tla-KF-smR"/>
+                                    <constraint firstItem="Dxr-cf-ZNK" firstAttribute="top" secondItem="K8d-rH-clX" secondAttribute="top" id="UcR-ZX-dU3"/>
+                                    <constraint firstItem="Dxr-cf-ZNK" firstAttribute="height" secondItem="uPk-QZ-F59" secondAttribute="height" id="ku8-cd-Ubv"/>
+                                    <constraint firstItem="Dxr-cf-ZNK" firstAttribute="width" secondItem="uPk-QZ-F59" secondAttribute="width" id="waU-nm-TKW"/>
+                                    <constraint firstItem="uPk-QZ-F59" firstAttribute="top" secondItem="K8d-rH-clX" secondAttribute="top" id="wmY-Oo-8HX"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vus-Yu-NEY">
+                                <rect key="frame" x="10" y="360" width="300" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="url 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2C-G5-Cj0">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="url 2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PmH-zA-gQH">
+                                        <rect key="frame" x="0.0" y="30" width="300" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6fI-iA-Uok"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxa-la-xMt">
+                                <rect key="frame" x="120" y="435" width="80" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="5Sy-oa-IKw"/>
+                                    <constraint firstAttribute="height" constant="35" id="mSk-B6-tV1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Download">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WFF-IE-PSd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Vus-Yu-NEY" secondAttribute="trailing" constant="10" id="Cud-OT-pfP"/>
+                            <constraint firstItem="Vus-Yu-NEY" firstAttribute="top" secondItem="K8d-rH-clX" secondAttribute="bottom" constant="20" id="GdO-Xd-l8a"/>
+                            <constraint firstAttribute="trailing" secondItem="K8d-rH-clX" secondAttribute="trailing" id="Ljc-QD-hgy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bxa-la-xMt" secondAttribute="bottom" constant="10" id="Oml-KO-8Ne"/>
+                            <constraint firstItem="K8d-rH-clX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="S92-7b-pT4"/>
+                            <constraint firstItem="bxa-la-xMt" firstAttribute="top" secondItem="Vus-Yu-NEY" secondAttribute="bottom" constant="15" id="arN-O6-GGe"/>
+                            <constraint firstItem="K8d-rH-clX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="hlk-0b-vAD"/>
+                            <constraint firstItem="Vus-Yu-NEY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="nhd-Vy-2FE"/>
+                            <constraint firstItem="bxa-la-xMt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rkf-Ex-YhZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView1" destination="Dxr-cf-ZNK" id="Oif-18-lUO"/>
+                        <outlet property="imageView2" destination="uPk-QZ-F59" id="eNo-mX-rIr"/>
+                        <outlet property="urlTextField1" destination="f2C-G5-Cj0" id="FMx-9h-snI"/>
+                        <outlet property="urlTextField2" destination="PmH-zA-gQH" id="m73-cP-W8m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
