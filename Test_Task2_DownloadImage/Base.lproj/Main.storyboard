@@ -90,6 +90,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btmConstraint" destination="Oml-KO-8Ne" id="VNh-cP-0tf"/>
                         <outlet property="imageView1" destination="Dxr-cf-ZNK" id="Oif-18-lUO"/>
                         <outlet property="imageView2" destination="uPk-QZ-F59" id="eNo-mX-rIr"/>
                         <outlet property="urlTextField1" destination="f2C-G5-Cj0" id="FMx-9h-snI"/>
