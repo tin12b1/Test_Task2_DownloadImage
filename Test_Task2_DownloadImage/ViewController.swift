@@ -42,26 +42,30 @@ class ViewController: UIViewController {
     }
     
     func fetchImage(_ url1: String,_ url2: String) {
+        let queue = DispatchQueue(label: "download image", qos: .utility, attributes: .concurrent)
         let url1 = URL(string: url1)
-        (URLSession(configuration: .default)).dataTask(with: url1!, completionHandler: {(dataImage, response, error) in
-            if let data = dataImage {
-                DispatchQueue.main.async() { () -> Void in
-                    self.imageView1?.image = UIImage(data: data)
-                }
-                
-            }
-        }).resume()
-        
         let url2 = URL(string: url2)
-        (URLSession(configuration: .default)).dataTask(with: url2!, completionHandler: {(dataImage, response, error) in
-            if let data = dataImage {
-                DispatchQueue.main.async() { () -> Void in
-                    self.imageView2?.image = UIImage(data: data)
+        queue.async {
+            (URLSession(configuration: .default)).dataTask(with: url1!, completionHandler: {(dataImage, response, error) in
+                if let data = dataImage {
+                    DispatchQueue.main.async() { () -> Void in
+                        self.imageView1?.image = UIImage(data: data)
+                    }
+                    
                 }
-                
-            }
-        }).resume()
+            }).resume()
+        }
         
+        queue.async {
+            (URLSession(configuration: .default)).dataTask(with: url2!, completionHandler: {(dataImage, response, error) in
+                if let data = dataImage {
+                    DispatchQueue.main.async() { () -> Void in
+                        self.imageView2?.image = UIImage(data: data)
+                    }
+                    
+                }
+            }).resume()
+        }
     }
     
     func keyboardWillShow(notification:NSNotification) {
